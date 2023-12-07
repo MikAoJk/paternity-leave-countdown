@@ -1,7 +1,6 @@
 'use client';
 
-import React, {useEffect, useState} from 'react';
-import './CountDown.css'
+import React, {useState} from 'react';
 
 interface CountdownProps {
     date: string;
@@ -12,44 +11,39 @@ export const Countdown = ({date}: CountdownProps) => {
 
     const [secondsLeft, setSecondsLeft] = useState(parsedDate)
 
-    useEffect(() => {
-            const interval = setInterval(() => {
-                const tempCountdownDate: number | null = calculateCountdown(secondsLeft);
-                tempCountdownDate && setSecondsLeft(tempCountdownDate);
-            }, 1000);
-            return () => clearInterval(interval)
-        }
-        // eslint-disable-next-line
-        , []
-    )
+
+    setInterval(() => {
+        const tempCountdownDate: number | null = calculateCountdown(secondsLeft);
+        tempCountdownDate && setSecondsLeft(tempCountdownDate);
+    }, 0);
 
     const {days, hours, min, sec} = timeLeft(secondsLeft);
 
     return (
-        <div className="Countdown">
-        <span className="Countdown-col">
-          <span className="Countdown-col-element">
+        <div className="m-auto pb-5">
+        <span className="inline-block text-5xl">
+          <span className="m-5 flex flex-col text-center">
               <strong>{addLeadingZeros(days)}</strong>
               <span>{days === 1 ? 'Day' : 'Days'}</span>
           </span>
         </span>
 
-            <span className="Countdown-col">
-          <span className="Countdown-col-element">
+            <span className="inline-block text-5xl">
+          <span className="m-5 flex flex-col text-center">
             <strong>{addLeadingZeros(hours)}</strong>
             <span>Hours</span>
           </span>
         </span>
 
-            <span className="Countdown-col">
-          <span className="Countdown-col-element">
+            <span className="inline-block text-5xl">
+          <span className="m-5 flex flex-col text-center">
             <strong>{addLeadingZeros(min)}</strong>
             <span>Min</span>
           </span>
         </span>
 
-            <span className="Countdown-col">
-          <span className="Countdown-col-element">
+            <span className="inline-block text-5xl">
+          <span className="m-5 flex flex-col text-center">
             <strong>{addLeadingZeros(Math.floor(sec))}</strong>
             <span>Sec</span>
           </span>
