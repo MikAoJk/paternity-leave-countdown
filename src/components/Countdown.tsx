@@ -21,28 +21,28 @@ export const Countdown = ({date}: CountdownProps) => {
 
     return (
         <div className="m-auto pb-5">
-        <span className="inline-block text-5xl">
+        <span className="inline-block text-5xl sm:text-l">
           <span className="m-5 flex flex-col text-center">
               <strong>{addLeadingZeros(days)}</strong>
               <span>{days === 1 ? 'Day' : 'Days'}</span>
           </span>
         </span>
 
-            <span className="inline-block text-5xl">
+            <span className="inline-block text-5xl sm:text-l">
           <span className="m-5 flex flex-col text-center">
             <strong>{addLeadingZeros(hours)}</strong>
             <span>Hours</span>
           </span>
         </span>
 
-            <span className="inline-block text-5xl">
+            <span className="inline-block text-5xl sm:text-l">
           <span className="m-5 flex flex-col text-center">
             <strong>{addLeadingZeros(min)}</strong>
             <span>Min</span>
           </span>
         </span>
 
-            <span className="inline-block text-5xl">
+            <span className="inline-block text-5xl sm:text-l">
           <span className="m-5 flex flex-col text-center">
             <strong>{addLeadingZeros(Math.floor(sec))}</strong>
             <span>Sec</span>
