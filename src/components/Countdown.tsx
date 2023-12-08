@@ -20,30 +20,30 @@ export const Countdown = ({date}: CountdownProps) => {
     const {days, hours, min, sec} = timeLeft(secondsLeft);
 
     return (
-        <div className="m-auto pb-5">
-        <span className="inline-block text-5xl sm:text-l">
-          <span className="m-5 flex flex-col text-center">
+        <div className="m-auto pb-5 ">
+        <span className="inline-block text-xl md:inline-block md:text-5xl">
+           <span className="m-2 flex flex-col text-center md:m-5">
               <strong>{addLeadingZeros(days)}</strong>
               <span>{days === 1 ? 'Day' : 'Days'}</span>
           </span>
         </span>
 
-            <span className="inline-block text-5xl sm:text-l">
-          <span className="m-5 flex flex-col text-center">
+            <span className="inline-block text-xl md:inline-block md:text-5xl">
+          <span className="m-2 flex flex-col text-center md:m-5">
             <strong>{addLeadingZeros(hours)}</strong>
             <span>Hours</span>
           </span>
         </span>
 
-            <span className="inline-block text-5xl sm:text-l">
-          <span className="m-5 flex flex-col text-center">
+            <span className="inline-block text-xl md:inline-block md:text-5xl">
+         <span className="m-2 flex flex-col text-center md:m-5">
             <strong>{addLeadingZeros(min)}</strong>
             <span>Min</span>
           </span>
         </span>
 
-            <span className="inline-block text-5xl sm:text-l">
-          <span className="m-5 flex flex-col text-center">
+            <span className="inline-block text-xl md:inline-block md:text-5xl">
+         <span className="m-2 flex flex-col text-center md:m-5">
             <strong>{addLeadingZeros(Math.floor(sec))}</strong>
             <span>Sec</span>
           </span>
