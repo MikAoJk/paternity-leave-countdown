@@ -17,7 +17,7 @@ export const Countdown = ({date}: CountdownProps) => {
         tempCountdownDate && setSecondsLeft(tempCountdownDate);
     }, 0);
 
-    const {year, days, hours, min, sec} = timeLeft(secondsLeft);
+    const {years, days, hours, min, sec} = timeLeft(secondsLeft);
 
     return (
         <div className="m-auto pb-5 ">
