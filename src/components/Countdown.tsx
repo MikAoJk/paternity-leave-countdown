@@ -17,10 +17,17 @@ export const Countdown = ({date}: CountdownProps) => {
         tempCountdownDate && setSecondsLeft(tempCountdownDate);
     }, 0);
 
-    const {days, hours, min, sec} = timeLeft(secondsLeft);
+    const {year, days, hours, min, sec} = timeLeft(secondsLeft);
 
     return (
         <div className="m-auto pb-5 ">
+            <span className="inline-block text-xl md:inline-block md:text-5xl">
+           <span className="m-2 flex flex-col text-center md:m-5">
+              <strong>{addLeadingZeros(years)}</strong>
+              <span>Years</span>
+          </span>
+        </span>
+            
         <span className="inline-block text-xl md:inline-block md:text-5xl">
            <span className="m-2 flex flex-col text-center md:m-5">
               <strong>{addLeadingZeros(days)}</strong>
